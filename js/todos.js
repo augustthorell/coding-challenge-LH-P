@@ -2,6 +2,10 @@ function renderTodos() {
     const todoBtnContainer = document.getElementById("todoList");
     todoBtnContainer.innerHTML = "";
     let todos = getAllTodos();
+    todos.sort(function (a, b) {
+
+        return a.added - b.added;
+    });
 
     for (var i = 0; i < todos.length; i++) {
 
@@ -55,9 +59,15 @@ function renderTodos() {
         todo.appendChild(nameBtnWrapper);
         todo.appendChild(dateWrapper);
 
-        todoBtnContainer.appendChild(todo);
+        todoBtnContainer.appendChild(todo)
+
+
+
+
     }
 }
+
+
 renderTodos();
 
 let completedBtns = document.querySelectorAll('.completedBtn')
@@ -87,7 +97,7 @@ function checkCompletedTodos() {
             document.querySelector('.completedBtn' + '.' + todo.key).style.backgroundColor = '#39C6A3';
         }
         else if (todo.complete === false) {
-
+            document.querySelector('.dueDate' + '.' + todo.key).innerHTML = countdown(todo.date);
             document.querySelector('.dueDate' + '.' + todo.key).innerHTML = countdown(todo.date);
             document.querySelector('.todoTitle' + '.' + todo.key).classList.remove('completedTodoTitle');
             document.querySelector('.todo' + '.' + todo.key).classList.remove('completedTodo');

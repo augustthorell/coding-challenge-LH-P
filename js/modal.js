@@ -21,27 +21,11 @@ window.addEventListener('click', (e) => {
 
 function addTodo() {
   let createTodoName = document.getElementById("createTodoName").value;
-  let key = createTodoName.replace(/\s/g, "");
+  let className = createTodoName.replace(/\s/g, "");
   let category = document.getElementById('categoryList').value;
   let dueDate = document.getElementById('dueDate').value;
-  createTodo(key, createTodoName, category, dueDate);
+  let now = getMilliseconds()
+  createTodo(className, now, createTodoName, category, dueDate);
   clearInputFields();
   renderTodos();
-
-}
-
-
-function onlyAlphabets() {
-
-  var regex = /^[a-zA-Z]*$/;
-  if (regex.test(document.f.nm.value)) {
-
-    //document.getElementById("notification").innerHTML = "Watching.. Everything is Alphabet now";
-    return true;
-  } else {
-    document.getElementById("notification").innerHTML = "Alphabets Only";
-    return false;
-  }
-
-
 }

@@ -24,8 +24,16 @@ function countdown(dirtynumber) {
         remainingTime = 'In ' + days + ' days';
     } else if ((days >= 7) && (days < 14)) {
         remainingTime = 'In 1 week';
-    } else {
+    } else if (days >= 14 && days !== 365) {
         remainingTime = 'In ' + Math.floor(days / 7) + ' weeks';
+    } else {
+        remainingTime = 'No due date';
     }
     return remainingTime;
+}
+
+function getMilliseconds() {
+    let date = new Date();
+    let now = date.getTime();
+    return now;
 }

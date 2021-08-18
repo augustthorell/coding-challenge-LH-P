@@ -8,18 +8,12 @@
     <title>Todo App</title>
     <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/modal.css" type="text/css">
-    <link rel="stylesheet" href="css/dropdown.css" type="text/css">
-    <link rel="stylesheet" href="css/todo.css" type="text/css">
     <script rel="script" defer src="js/localStorage.js"></script>
     <script rel="script" defer src="js/date.js"></script>
     <script rel="script" defer src="js/modal.js"></script>
     <script rel="script" defer src="js/todos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"
-        integrity="sha512-zYXldzJsDrNKV+odAwFYiDXV2Cy37cwizT+NkuiPGsa9X1dOz04eHvUWVuxaJ299GvcJT31ug2zO4itXBjFx4w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/RubaXa/Sortable/Sortable.min.js"></script>
     <script rel="script" defer src="js/sortableList.js"></script>
-
 </head>
 
 <body>
@@ -56,28 +50,21 @@
         <div id="todoWrapper">
             <ul id='todoList'></ul>
         </div>
-
         <button class='addBtn'>
             + Add item
         </button>
     </div>
-
-
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2 id="modal-title">Add Todo</h2>
-
             <form id="submitForm" onsubmit="addTodo()">
                 <div class="inputWrapper">
                     <label for="createTodoName">Name:</label>
-                    <input type="text" pattern="[a-zA-Z-' ']*"
-                        oninvalid="setCustomValidity('Please enter on alphabets only.')" id="createTodoName"
-                        name="createTodoName" placeholder="Enter Name" required="required">
+                    <input type="text" pattern="[a-zA-Z-' ']*" id="createTodoName" name="createTodoName"
+                        placeholder="Enter Name" required="required">
                 </div>
-
                 <div class="inputWrapper">
-
                     <label for='categoryList'>Category:</label>
                     <select id="categoryList">
                         <option> Choose category </option>
@@ -85,25 +72,15 @@
                         <option> Home </option>
                         <option> Food </option>
                     </select>
-
                 </div>
-
                 <div class="inputWrapper">
                     <label for="dueDate">Due Date:</label>
                     <input type="date" id="dueDate" name="startingDate">
                 </div>
                 <input type='submit' value="Add" class="addBtn addTodoBtn">
             </form>
-
         </div>
     </div>
 </body>
 
 </html>
-
-
-<!-- <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="19" height="19" rx="4" fill="#39C6A3" />
-    <path d="M5.14606 9.16263L9.16121 12.6207L14.2065 5.57646" stroke="white" stroke-width="3" />
-</svg>
- -->
